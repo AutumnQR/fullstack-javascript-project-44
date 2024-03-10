@@ -1,0 +1,16 @@
+{
+  "name": "@hexlet/code",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Hexlet project #1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/AutumnQR/fullstack-javascript-project-44"
+  },
+  "author": "AutumnQR",
+  "license": "ISC"
+}
