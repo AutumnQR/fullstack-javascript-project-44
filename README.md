@@ -5,7 +5,11 @@
 Игры разума - это мой первый учебный проект на платформе Hexlet, в данный момент он все еще дорабатывается, соответственно README тоже будет постепенно обновляться
 
 ## Аскинемы
+Здесь вы сможете найти пример установки пакета, его запуска, а так же пример победы и поражения игрока.
+- Brain-even: <br>
+Описание - ответить на вопрос, четное ли число <br>
+[![asciicast](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr.svg)](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr) <br>
 
-- Brain-even: Здесь вы сможете найти пример установки пакета, его запуска, а так же пример победы и поражения игрока.
-
-[![asciicast](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr.svg)](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr)
+- Brain-calc: <br>
+Описание - выполнить математические операции и предоставить результат <br>
+[![asciicast](https://asciinema.org/a/kOjr1kjRRMlWti1WyEKZ2ARXI.svg)](https://asciinema.org/a/kOjr1kjRRMlWti1WyEKZ2ARXI)
