@@ -12,4 +12,4 @@
 
 - Brain-calc: <br>
 Описание - выполнить математические операции и предоставить результат <br>
-[![asciicast](https://asciinema.org/a/kOjr1kjRRMlWti1WyEKZ2ARXI.svg)](https://asciinema.org/a/kOjr1kjRRMlWti1WyEKZ2ARXI)
+[![asciicast](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr.svg)](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr) <br>
