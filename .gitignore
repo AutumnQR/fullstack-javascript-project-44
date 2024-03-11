@@ -1,2 +1,4 @@
 .github/
 node_modules/
+.prettierrc
+.eslintrc.yml
