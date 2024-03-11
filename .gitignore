@@ -1,3 +1,2 @@
-/.github/*
-/.github
-./node_modules
+.github/
+node_modules/
