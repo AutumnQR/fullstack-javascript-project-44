@@ -1,6 +1,14 @@
 export const COUNT_OF_GAMES = 3;
 export const getRandomNumber = () => Math.floor(Math.random() * 20);
 
+export const getCorrectAnswerNOD = (numOne, numTwo) => {
+  if (numTwo !== 0) {
+    const residue = numOne % numTwo;
+    return getCorrectAnswerNOD(numTwo, residue);
+  }
+  return numOne;
+};
+
 export const getCorrectAnswerEven = (randomNum) => {
   if (randomNum % 2 === 0) {
     return 'yes';
@@ -18,7 +26,7 @@ export const getCorrectAnswerCalc = (nums, mathOperator) => {
     case '*':
       return nums[0] * nums[1];
     default:
-      return null;
+      return undefined;
   }
 };
 
@@ -53,7 +61,8 @@ export const getRandomMathExpression = () => {
   return mathSyms[randomIndex];
 };
 
-export const getRandomNumbers = () => [
-  Math.floor(Math.random() * 20),
-  Math.floor(Math.random() * 20),
-];
+export const getRandomNumbers = () => {
+  const numOne = Math.floor(Math.random() * 10);
+  const numTwo = Math.floor(Math.random() * 10);
+  return numOne > numTwo ? [numOne, numTwo] : [numTwo, numOne];
+};
