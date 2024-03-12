@@ -21,3 +21,7 @@
 - Brain-progression: <br>
 Описание - найти пропущенное число среди прогрессии <br>
 [![asciicast](https://asciinema.org/a/yXfsC3DY4NYFNbLuAtux6PDTq.svg)](https://asciinema.org/a/yXfsC3DY4NYFNbLuAtux6PDTq)
+
+- Brain-prime: <br>
+Описание - ответить на вопрос: число является простым или нет <br>
+[![asciicast](https://asciinema.org/a/Sv6DIPVzprm3Hb6YXOvoto4dr.svg)](https://asciinema.org/a/Sv6DIPVzprm3Hb6YXOvoto4dr)
