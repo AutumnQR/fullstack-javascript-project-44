@@ -11,7 +11,7 @@ import {
 const brainCalc = () => {
   const name = welcomeMessage();
   let correctAnswersCount = 1;
-
+  console.log('What is the result of the expression?');
   for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
     const mathOperator = getRandomMathExpression();
     const nums = getRandomNumbers();
