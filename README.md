@@ -13,3 +13,7 @@
 - Brain-calc: <br>
 Описание - выполнить математические операции и предоставить результат <br>
 [![asciicast](https://asciinema.org/a/zn1CF25Zv0dPEHmDNgXtCNTlz.svg)](https://asciinema.org/a/zn1CF25Zv0dPEHmDNgXtCNTlz)
+
+- Brain-gcd: <br>
+Описание - найти наибольший общий делитель среди 2-х чисел <br>
+[![asciicast](https://asciinema.org/a/D74GYdBGGTlbygHUGaL4DJCQ7.svg)](https://asciinema.org/a/D74GYdBGGTlbygHUGaL4DJCQ7)
