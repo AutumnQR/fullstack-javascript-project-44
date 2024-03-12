@@ -1,5 +1,5 @@
 export const COUNT_OF_GAMES = 3;
-export const getRandomNumber = () => Math.floor(Math.random() * 20);
+export const getRandomNumber = (max = 20) => Math.floor(Math.random() * max);
 export const getRandomIndex = (list) =>
   Math.floor(Math.random() * (list.length - 1));
 
@@ -70,7 +70,7 @@ export const getRandomNumbers = () => {
 };
 
 export const getHiddenProgression = (length = 10) => {
-  const progression = getRandomNumber();
+  const progression = getRandomNumber(10);
   const startNumber = getRandomNumber();
   let nextNumber = startNumber + progression;
   const list = [startNumber];
