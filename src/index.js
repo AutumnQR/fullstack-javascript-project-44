@@ -1,7 +1,6 @@
 export const COUNT_OF_GAMES = 3;
 export const getRandomNumber = (max = 20) => Math.floor(Math.random() * max);
-export const getRandomIndex = (list) =>
-  Math.floor(Math.random() * (list.length - 1));
+export const getRandomIndex = (list) => Math.floor(Math.random() * (list.length - 1));
 
 export const getCorrectAnswerNOD = (numOne, numTwo) => {
   if (numTwo !== 0) {
