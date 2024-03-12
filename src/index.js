@@ -1,5 +1,7 @@
 export const COUNT_OF_GAMES = 3;
 export const getRandomNumber = () => Math.floor(Math.random() * 20);
+export const getRandomIndex = (list) =>
+  Math.floor(Math.random() * (list.length - 1));
 
 export const getCorrectAnswerNOD = (numOne, numTwo) => {
   if (numTwo !== 0) {
@@ -57,12 +59,30 @@ export const checkCorrectAnswer = (
 
 export const getRandomMathExpression = () => {
   const mathSyms = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * (mathSyms.length - 1));
+  const randomIndex = getRandomIndex(mathSyms);
   return mathSyms[randomIndex];
 };
 
 export const getRandomNumbers = () => {
-  const numOne = Math.floor(Math.random() * 10);
-  const numTwo = Math.floor(Math.random() * 10);
+  const numOne = getRandomNumber();
+  const numTwo = getRandomNumber();
   return numOne > numTwo ? [numOne, numTwo] : [numTwo, numOne];
+};
+
+export const getHiddenProgression = (length = 10) => {
+  const progression = getRandomNumber();
+  const startNumber = getRandomNumber();
+  let nextNumber = startNumber + progression;
+  const list = [startNumber];
+
+  for (let i = 1; i < length; i += 1) {
+    list.push(nextNumber);
+    nextNumber += progression;
+  }
+
+  const randomIndex = getRandomIndex(list);
+  const replacedItem = String(list[randomIndex]);
+  const hiddenProgression = list.join(' ').replace(replacedItem, '..');
+
+  return { hiddenProgression, correctAnswer: replacedItem };
 };
