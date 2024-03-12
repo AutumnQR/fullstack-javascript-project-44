@@ -11,8 +11,18 @@ export const getCorrectAnswerNOD = (numOne, numTwo) => {
   return numOne;
 };
 
-export const getCorrectAnswerEven = (randomNum) => {
-  if (randomNum % 2 === 0) {
+export const getCorrectAnswerPrime = (number) => {
+  if (number > 1) {
+    for (let i = 2; i * i <= number; i += 1) {
+      if (number % i === 0) return 'no';
+    }
+    return 'yes';
+  }
+  return 'no';
+};
+
+export const getCorrectAnswerEven = (number) => {
+  if (number % 2 === 0) {
     return 'yes';
   }
 
