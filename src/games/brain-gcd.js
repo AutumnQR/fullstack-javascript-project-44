@@ -2,16 +2,17 @@ import readlineSync from 'readline-sync';
 import welcomeMessage from '../cli.js';
 import {
   checkCorrectAnswer,
+  COUNT_OF_GAMES,
   getCorrectAnswerNOD,
   getRandomNumbers,
 } from '../index.js';
 
 const brainGcd = () => {
   const name = welcomeMessage();
-  let correctAnswersCount = 0;
+  let correctAnswersCount = 1;
   console.log('Find the greatest common divisor of given numbers.');
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
     const [numOne, numTwo] = getRandomNumbers();
     const correctAnswer = getCorrectAnswerNOD(numOne, numTwo);
 

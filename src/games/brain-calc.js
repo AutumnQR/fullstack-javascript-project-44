@@ -10,7 +10,7 @@ import {
 
 const brainCalc = () => {
   const name = welcomeMessage();
-  let correctAnswersCount = 0;
+  let correctAnswersCount = 1;
 
   for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
     const mathOperator = getRandomMathExpression();
