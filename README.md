@@ -17,3 +17,7 @@
 - Brain-gcd: <br>
 Описание - найти наибольший общий делитель среди 2-х чисел <br>
 [![asciicast](https://asciinema.org/a/D74GYdBGGTlbygHUGaL4DJCQ7.svg)](https://asciinema.org/a/D74GYdBGGTlbygHUGaL4DJCQ7)
+
+- Brain-progression: <br>
+Описание - найти пропущенное число среди прогрессии <br>
+[![asciicast](https://asciinema.org/a/yXfsC3DY4NYFNbLuAtux6PDTq.svg)](https://asciinema.org/a/yXfsC3DY4NYFNbLuAtux6PDTq)
