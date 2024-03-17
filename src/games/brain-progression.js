@@ -1,4 +1,4 @@
-import welcomeMessage from '../cli.js';
+import welcome from '../cli.js';
 import {
   checkCorrectAnswer,
   COUNT_OF_GAMES,
@@ -7,7 +7,7 @@ import {
 } from '../index.js';
 
 const brainProgression = () => {
-  const name = welcomeMessage();
+  const name = welcome();
   let correctAnswersCount = 1;
   console.log('What number is missing in the progression?');
 

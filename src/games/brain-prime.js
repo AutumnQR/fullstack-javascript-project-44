@@ -1,4 +1,4 @@
-import welcomeMessage from '../cli.js';
+import welcome from '../cli.js';
 import {
   checkCorrectAnswer,
   COUNT_OF_GAMES,
@@ -8,7 +8,7 @@ import {
 } from '../index.js';
 
 const brainProgression = () => {
-  const name = welcomeMessage();
+  const name = welcome();
   let correctAnswersCount = 1;
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   for (let i = 0; i < COUNT_OF_GAMES; i += 1) {

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import welcomeMessage from '../src/cli.js';
+import welcome from '../src/cli.js';
 
-welcomeMessage();
+welcome();

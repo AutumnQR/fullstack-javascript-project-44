@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import welcomeMessage from '../cli.js';
+import welcome from '../cli.js';
 import {
   COUNT_OF_GAMES,
   checkCorrectAnswer,
@@ -10,7 +9,7 @@ import {
 } from '../index.js';
 
 const brainCalc = () => {
-  const name = welcomeMessage();
+  const name = welcome();
   let correctAnswersCount = 1;
   console.log('What is the result of the expression?');
 
