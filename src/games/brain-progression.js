@@ -1,33 +1,26 @@
-import welcome from '../cli.js';
-import {
-  checkCorrectAnswer,
-  COUNT_OF_GAMES,
-  getHiddenProgression,
-  parseAnswer,
-} from '../index.js';
+import { runEngine } from '../index.js';
+import { getRandomIndex, getRandomNumber } from '../utils.js';
+
+const generateRound = (length = 10) => {
+  const progression = getRandomNumber(10);
+  const startNumber = getRandomNumber();
+  let nextNumber = startNumber + progression;
+  const list = [startNumber];
+
+  for (let i = 1; i < length; i += 1) {
+    list.push(nextNumber);
+    nextNumber += progression;
+  }
+
+  const randomIndex = getRandomIndex(list);
+  const replacedItem = list[randomIndex];
+  const hiddenProgression = list.join(' ').replace(replacedItem, '..');
+
+  return [hiddenProgression, replacedItem];
+};
 
 const brainProgression = () => {
-  const name = welcome();
-  let correctAnswersCount = 1;
-  console.log('What number is missing in the progression?');
-
-  for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
-    const { hiddenProgression, correctAnswer } = getHiddenProgression();
-    const userAnswer = parseAnswer(hiddenProgression);
-
-    const check = checkCorrectAnswer(
-      correctAnswer,
-      userAnswer,
-      correctAnswersCount,
-      name,
-    );
-
-    if (!check.continue || !check.correct) {
-      break;
-    } else {
-      correctAnswersCount += 1;
-    }
-  }
+  runEngine('What number is missing in the progression?', generateRound);
 };
 
 export default brainProgression;

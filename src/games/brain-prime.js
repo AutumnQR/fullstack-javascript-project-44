@@ -1,34 +1,27 @@
-import welcome from '../cli.js';
-import {
-  checkCorrectAnswer,
-  COUNT_OF_GAMES,
-  getCorrectAnswerPrime,
-  getRandomNumber,
-  parseAnswer,
-} from '../index.js';
+import { getRandomNumber } from '../utils.js';
+import { runEngine } from '../index.js';
 
-const brainProgression = () => {
-  const name = welcome();
-  let correctAnswersCount = 1;
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
-    const number = getRandomNumber(15);
-    const correctAnswer = getCorrectAnswerPrime(number);
-    const userAnswer = parseAnswer(number);
-
-    const check = checkCorrectAnswer(
-      correctAnswer,
-      userAnswer,
-      correctAnswersCount,
-      name,
-    );
-
-    if (!check.continue || !check.correct) {
-      break;
-    } else {
-      correctAnswersCount += 1;
+const getCorrectAnswerPrime = (number) => {
+  if (number > 1) {
+    for (let i = 2; i * i <= number; i += 1) {
+      if (number % i === 0) return 'no';
     }
+    return 'yes';
   }
+  return 'no';
 };
 
-export default brainProgression;
+const generateRound = () => {
+  const number = getRandomNumber(15);
+  const correctAnswer = getCorrectAnswerPrime(number);
+  return [number, correctAnswer];
+};
+
+const brainPrime = () => {
+  runEngine(
+    'Answer "yes" if given number is prime. Otherwise answer "no".',
+    generateRound,
+  );
+};
+
+export default brainPrime;

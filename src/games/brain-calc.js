@@ -1,41 +1,34 @@
-import welcome from '../cli.js';
-import {
-  COUNT_OF_GAMES,
-  checkCorrectAnswer,
-  getCorrectAnswerCalc,
-  getRandomMathExpression,
-  getRandomNumbers,
-  parseAnswer,
-} from '../index.js';
+import { runEngine } from '../index.js';
+import { getRandomIndex, getRandomNumbers } from '../utils.js';
+
+export const getRandomMathExpression = () => {
+  const mathSyms = ['+', '-', '*'];
+  const randomIndex = getRandomIndex(mathSyms);
+  return mathSyms[randomIndex];
+};
+
+const getCorrectAnswerCalc = (nums, mathOperator) => {
+  switch (mathOperator) {
+    case '+':
+      return nums[0] + nums[1];
+    case '-':
+      return nums[0] - nums[1];
+    case '*':
+      return nums[0] * nums[1];
+    default:
+      return undefined;
+  }
+};
+
+const generateRound = () => {
+  const mathOperator = getRandomMathExpression();
+  const nums = getRandomNumbers();
+  const correctAnswer = getCorrectAnswerCalc(nums, mathOperator);
+  return [`${nums[0]} ${mathOperator} ${nums[1]}`, correctAnswer];
+};
 
 const brainCalc = () => {
-  const name = welcome();
-  let correctAnswersCount = 1;
-  console.log('What is the result of the expression?');
-
-  for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
-    const mathOperator = getRandomMathExpression();
-    const nums = getRandomNumbers();
-    const correctAnswer = getCorrectAnswerCalc(nums, mathOperator);
-
-    const userAnswer = parseAnswer(
-      `${nums[0]} ${mathOperator} ${nums[1]}`,
-      true,
-    );
-
-    const check = checkCorrectAnswer(
-      correctAnswer,
-      userAnswer,
-      correctAnswersCount,
-      name,
-    );
-
-    if (!check.continue || !check.correct) {
-      break;
-    } else {
-      correctAnswersCount += 1;
-    }
-  }
+  runEngine('What is the result of the expression?', generateRound);
 };
 
 export default brainCalc;
