@@ -1,10 +1,10 @@
-import readlineSync from 'readline-sync';
 import welcomeMessage from '../cli.js';
 import {
   checkCorrectAnswer,
   COUNT_OF_GAMES,
   getCorrectAnswerPrime,
   getRandomNumber,
+  parseAnswer,
 } from '../index.js';
 
 const brainProgression = () => {
@@ -14,8 +14,7 @@ const brainProgression = () => {
   for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
     const number = getRandomNumber(15);
     const correctAnswer = getCorrectAnswerPrime(number);
-    console.log(`Question: ${number}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = parseAnswer(number);
 
     const check = checkCorrectAnswer(
       correctAnswer,

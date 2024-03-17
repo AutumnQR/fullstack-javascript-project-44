@@ -1,6 +1,9 @@
+import readlineSync from 'readline-sync';
+
 export const COUNT_OF_GAMES = 3;
 export const getRandomNumber = (max = 20) => Math.floor(Math.random() * max);
-export const getRandomIndex = (list) => Math.floor(Math.random() * (list.length - 1));
+export const getRandomIndex = (list) =>
+  Math.floor(Math.random() * (list.length - 1));
 
 export const getCorrectAnswerNOD = (numOne, numTwo) => {
   if (numTwo !== 0) {
@@ -8,6 +11,13 @@ export const getCorrectAnswerNOD = (numOne, numTwo) => {
     return getCorrectAnswerNOD(numTwo, residue);
   }
   return numOne;
+};
+
+export const parseAnswer = (question, isNum = false) => {
+  console.log(`Question: ${question}`);
+  return isNum
+    ? parseInt(readlineSync.question('Your answer: '), 10)
+    : readlineSync.question('Your answer: ');
 };
 
 export const getCorrectAnswerPrime = (number) => {

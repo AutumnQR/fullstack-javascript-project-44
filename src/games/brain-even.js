@@ -1,10 +1,10 @@
-import readlineSync from 'readline-sync';
 import welcomeMessage from '../cli.js';
 import {
   checkCorrectAnswer,
   COUNT_OF_GAMES,
   getCorrectAnswerEven,
   getRandomNumber,
+  parseAnswer,
 } from '../index.js';
 
 const brainEven = () => {
@@ -15,13 +15,11 @@ const brainEven = () => {
   for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
     const randomNum = getRandomNumber();
     const correctAnswer = getCorrectAnswerEven(randomNum);
-
-    console.log(`Question: ${randomNum}`);
-    const answer = readlineSync.question('Your answer: ');
+    const userAnswer = parseAnswer(randomNum);
 
     const check = checkCorrectAnswer(
       correctAnswer,
-      answer,
+      userAnswer,
       correctAnswersCount,
       name,
     );

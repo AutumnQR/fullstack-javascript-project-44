@@ -1,9 +1,9 @@
-import readlineSync from 'readline-sync';
 import welcomeMessage from '../cli.js';
 import {
   checkCorrectAnswer,
   COUNT_OF_GAMES,
   getHiddenProgression,
+  parseAnswer,
 } from '../index.js';
 
 const brainProgression = () => {
@@ -13,8 +13,7 @@ const brainProgression = () => {
 
   for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
     const { hiddenProgression, correctAnswer } = getHiddenProgression();
-    console.log(`Question: ${hiddenProgression}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = parseAnswer(hiddenProgression);
 
     const check = checkCorrectAnswer(
       correctAnswer,

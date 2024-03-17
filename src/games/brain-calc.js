@@ -6,23 +6,27 @@ import {
   getCorrectAnswerCalc,
   getRandomMathExpression,
   getRandomNumbers,
+  parseAnswer,
 } from '../index.js';
 
 const brainCalc = () => {
   const name = welcomeMessage();
   let correctAnswersCount = 1;
   console.log('What is the result of the expression?');
+
   for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
     const mathOperator = getRandomMathExpression();
     const nums = getRandomNumbers();
     const correctAnswer = getCorrectAnswerCalc(nums, mathOperator);
 
-    console.log(`Question: ${nums[0]} ${mathOperator} ${nums[1]}`);
-    const answer = parseInt(readlineSync.question('Your answer: '), 10);
+    const userAnswer = parseAnswer(
+      `${nums[0]} ${mathOperator} ${nums[1]}`,
+      true,
+    );
 
     const check = checkCorrectAnswer(
       correctAnswer,
-      answer,
+      userAnswer,
       correctAnswersCount,
       name,
     );
