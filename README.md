@@ -1,39 +1,51 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/AutumnQR/fullstack-javascript-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AutumnQR/fullstack-javascript-project-44/actions)
-# Проект: Игры разума
+# Project: Brain Games
 
-Игры разума - это мой первый учебный проект на платформе Hexlet, представляют собой набор мини-игр, подробнее каждую из них вы сможете разобрать посмотрев аскинемы ниже
+Brain Games is my first educational project on the Hexlet platform, consisting of a set of mini-games. You can learn more about each of them by watching the asciinemas below.
 
-## Установка
+## Installation
 
-1. Клонируем репозиторий
-2. Устанавливаем зависимости: npm install
-3. Используем одну из перечисленных ниже команд для запуска игры:
-- brain-even
-- brain-calc
-- brain-gcd
-- brain-progression
-- brain-prime
-Описание каждой отдельной игры описано ниже, в разделе "Аскинемы"
+1. Clone the repository `git clone git@github.com:AutumnQR/fullstack-javascript-project-44.git`
+2. Install dependencies: `make install`.
+3. Use one of the following commands to start the game:
+- `brain-even` or `make brain-even`
+- `brain-calc` or `make brain-calc`
+- `brain-gcd` or `make brain-gcd`
+- `brain-progression` or `make brain-progression`
+- `brain-prime` or `make brain-prime`
 
-## Аскинемы
-Здесь вы сможете найти пример установки пакета, его запуска, а так же пример победы и поражения игрока.
+Descriptions for each individual game are provided below in the "Asciinemas" section.
+
+## Asciinemas
+
+Here you can find examples of package installation, gameplay, as well as examples of player victory and defeat.
+
 - Brain-even: <br>
-Описание - ответить на вопрос, четное ли число <br>
-[![asciicast](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr.svg)](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr) <br>
+  Description - determine whether the number is even or not. <br>
+  [![asciicast](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr.svg)](https://asciinema.org/a/L0DEmt2FbJJEHOB4FvctdzsJr) <br>
 
 - Brain-calc: <br>
-Описание - выполнить математические операции и предоставить результат <br>
-[![asciicast](https://asciinema.org/a/zn1CF25Zv0dPEHmDNgXtCNTlz.svg)](https://asciinema.org/a/zn1CF25Zv0dPEHmDNgXtCNTlz)
+  Description - perform mathematical operations and provide the result. <br>
+  [![asciicast](https://asciinema.org/a/zn1CF25Zv0dPEHmDNgXtCNTlz.svg)](https://asciinema.org/a/zn1CF25Zv0dPEHmDNgXtCNTlz)
 
 - Brain-gcd: <br>
-Описание - найти наибольший общий делитель среди 2-х чисел <br>
-[![asciicast](https://asciinema.org/a/D74GYdBGGTlbygHUGaL4DJCQ7.svg)](https://asciinema.org/a/D74GYdBGGTlbygHUGaL4DJCQ7)
+  Description - find the greatest common divisor among two numbers. <br>
+  [![asciicast](https://asciinema.org/a/D74GYdBGGTlbygHUGaL4DJCQ7.svg)](https://asciinema.org/a/D74GYdBGGTlbygHUGaL4DJCQ7)
 
 - Brain-progression: <br>
-Описание - найти пропущенное число среди прогрессии <br>
-[![asciicast](https://asciinema.org/a/yXfsC3DY4NYFNbLuAtux6PDTq.svg)](https://asciinema.org/a/yXfsC3DY4NYFNbLuAtux6PDTq)
+  Description - find the missing number in the progression. <br>
+  [![asciicast](https://asciinema.org/a/yXfsC3DY4NYFNbLuAtux6PDTq.svg)](https://asciinema.org/a/yXfsC3DY4NYFNbLuAtux6PDTq)
 
 - Brain-prime: <br>
-Описание - ответить на вопрос: число является простым или нет <br>
-[![asciicast](https://asciinema.org/a/Sv6DIPVzprm3Hb6YXOvoto4dr.svg)](https://asciinema.org/a/Sv6DIPVzprm3Hb6YXOvoto4dr)
+  Description - determine whether the number is prime or not. <br>
+  [![asciicast](https://asciinema.org/a/Sv6DIPVzprm3Hb6YXOvoto4dr.svg)](https://asciinema.org/a/Sv6DIPVzprm3Hb6YXOvoto4dr)
+
+## Commands (Makefile)
+
+- `install`: Install dependencies using npm ci.
+- `brain-games`: Start the brain games.
+- `publish`: Dry run publishing to npm.
+- `brain-calc`: Start the brain-calc game.
+- `brain-even`: Start the brain-even game.
+- `brain-gcd`: Start the brain-gcd game.
+- `brain-prime`: Start the brain-prime game.
+- `brain-progression`: Start the brain-progression game.
