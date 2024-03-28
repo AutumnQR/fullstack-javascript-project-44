@@ -1,17 +1,11 @@
 import { getRandomNumber } from '../utils.js';
 import { runEngine } from '../index.js';
 
-const getCorrectAnswerEven = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
-  }
-
-  return 'no';
-};
+const isEven = (number) => number % 2 === 0;
 
 const generateRound = () => {
   const randomNum = getRandomNumber();
-  const correctAnswer = getCorrectAnswerEven(randomNum);
+  const correctAnswer = isEven(randomNum) ? 'yes' : 'no';
   return [randomNum, correctAnswer];
 };
 

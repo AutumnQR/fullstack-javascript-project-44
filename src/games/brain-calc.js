@@ -1,30 +1,35 @@
 import { runEngine } from '../index.js';
-import { getRandomIndex, getRandomNumbers } from '../utils.js';
+import { getRandomIndex, getRandomNumber } from '../utils.js';
 
 export const getRandomMathExpression = () => {
-  const mathSyms = ['+', '-', '*'];
-  const randomIndex = getRandomIndex(mathSyms);
-  return mathSyms[randomIndex];
+  const mathSymbols = ['+', '-', '*'];
+  const randomIndex = getRandomIndex(mathSymbols);
+  return mathSymbols[randomIndex];
 };
 
-const getCorrectAnswerCalc = (nums, mathOperator) => {
-  switch (mathOperator) {
+const getCorrectAnswerCalc = (numOne, numTwo, operator) => {
+  switch (operator) {
     case '+':
-      return nums[0] + nums[1];
+      return numOne + numTwo;
     case '-':
-      return nums[0] - nums[1];
+      return numOne - numTwo;
     case '*':
-      return nums[0] * nums[1];
+      return numOne * numTwo;
     default:
-      return undefined;
+      throw new Error(`Invalid operator - ${operator}`);
   }
 };
 
 const generateRound = () => {
   const mathOperator = getRandomMathExpression();
-  const nums = getRandomNumbers();
-  const correctAnswer = getCorrectAnswerCalc(nums, mathOperator);
-  return [`${nums[0]} ${mathOperator} ${nums[1]}`, correctAnswer];
+  const numOne = getRandomNumber();
+  const numTwo = getRandomNumber();
+
+  const correctAnswer = String(
+    getCorrectAnswerCalc(numOne, numTwo, mathOperator),
+  );
+  const question = `${numOne} ${mathOperator} ${numTwo}`;
+  return [question, correctAnswer];
 };
 
 const brainCalc = () => {
