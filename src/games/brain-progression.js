@@ -2,8 +2,8 @@ import { runEngine } from '../index.js';
 import { getRandomIndex, getRandomNumber } from '../utils.js';
 
 const generateRound = (length = 10) => {
-  const progression = getRandomNumber(10);
-  const startNumber = getRandomNumber();
+  const progression = getRandomNumber(1, 20);
+  const startNumber = getRandomNumber(1, 20);
   let nextNumber = startNumber + progression;
   const list = [startNumber];
 
@@ -13,7 +13,7 @@ const generateRound = (length = 10) => {
   }
 
   const randomIndex = getRandomIndex(list);
-  const replacedItem = list[randomIndex];
+  const replacedItem = String(list[randomIndex]);
   const hiddenProgression = list.join(' ').replace(replacedItem, '..');
 
   return [hiddenProgression, replacedItem];

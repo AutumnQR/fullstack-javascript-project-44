@@ -14,7 +14,7 @@ export const runEngine = (rules, generateRound) => {
       console.log('Correct!');
     } else {
       console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${answer}'.`,
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`,
       );
       console.log(`Let's try again, ${name}!`);
       return;
