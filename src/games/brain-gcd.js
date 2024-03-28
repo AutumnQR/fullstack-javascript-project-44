@@ -1,5 +1,5 @@
 import { runEngine } from '../index.js';
-import { getRandomNumbers } from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 
 const getCorrectAnswerNOD = (numOne, numTwo) => {
   if (numTwo !== 0) {
@@ -10,9 +10,11 @@ const getCorrectAnswerNOD = (numOne, numTwo) => {
 };
 
 const generateRound = () => {
-  const [numOne, numTwo] = getRandomNumbers();
-  const correctAnswer = getCorrectAnswerNOD(numOne, numTwo);
-  return [`${numOne} ${numTwo}`, correctAnswer];
+  const numOne = getRandomNumber(1, 20);
+  const numTwo = getRandomNumber(1, 20);
+  const correctAnswer = String(getCorrectAnswerNOD(numOne, numTwo));
+  const question = `${numOne} ${numTwo}`;
+  return [question, correctAnswer];
 };
 
 const brainGcd = () => {

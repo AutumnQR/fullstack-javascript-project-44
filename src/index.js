@@ -1,5 +1,5 @@
+import readlineSync from 'readline-sync';
 import welcome from './cli.js';
-import readlineSync from "readline-sync";
 
 export const COUNT_OF_GAMES = 3;
 

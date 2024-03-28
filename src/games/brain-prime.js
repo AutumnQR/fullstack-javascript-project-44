@@ -1,19 +1,19 @@
 import { getRandomNumber } from '../utils.js';
 import { runEngine } from '../index.js';
 
-const getCorrectAnswerPrime = (number) => {
+const isPrime = (number) => {
   if (number > 1) {
     for (let i = 2; i * i <= number; i += 1) {
-      if (number % i === 0) return 'no';
+      if (number % i === 0) return false;
     }
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 const generateRound = () => {
   const number = getRandomNumber(15);
-  const correctAnswer = getCorrectAnswerPrime(number);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
   return [number, correctAnswer];
 };
 
