@@ -1,5 +1,5 @@
 import welcome from './cli.js';
-import { parseAnswer } from './utils.js';
+import readlineSync from "readline-sync";
 
 export const COUNT_OF_GAMES = 3;
 
@@ -8,7 +8,8 @@ export const runEngine = (rules, generateRound) => {
   console.log(rules);
   for (let i = 0; i < COUNT_OF_GAMES; i += 1) {
     const [question, answer] = generateRound();
-    const userAnswer = parseAnswer(question);
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === answer) {
       console.log('Correct!');
     } else {
