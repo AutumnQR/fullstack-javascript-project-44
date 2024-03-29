@@ -4,9 +4,9 @@ import { runEngine } from '../index.js';
 const isEven = (number) => number % 2 === 0;
 
 const generateRound = () => {
-  const randomNum = getRandomNumber();
-  const correctAnswer = isEven(randomNum) ? 'yes' : 'no';
-  return [randomNum, correctAnswer];
+  const question = getRandomNumber();
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
 const brainEven = () => {
