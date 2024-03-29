@@ -1,20 +1,24 @@
 import { runEngine } from '../index.js';
 import { getRandomIndex, getRandomNumber } from '../utils.js';
 
-const generateRound = (length = 10) => {
-  const progression = getRandomNumber(1, 20);
-  const startNumber = getRandomNumber(1, 20);
-  let nextNumber = startNumber + progression;
-  const list = [startNumber];
+const generateProgression = (start, step, length = 10) => {
+  const progression = [];
 
-  for (let i = 1; i < length; i += 1) {
-    list.push(nextNumber);
-    nextNumber += progression;
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i);
   }
 
-  const randomIndex = getRandomIndex(list);
-  const replacedItem = String(list[randomIndex]);
-  const hiddenProgression = list.join(' ').replace(replacedItem, '..');
+  return progression;
+};
+
+const generateRound = () => {
+  const step = getRandomNumber(1, 20);
+  const startNumber = getRandomNumber(1, 20);
+  const progression = generateProgression(startNumber, step);
+
+  const randomIndex = getRandomIndex(progression);
+  const replacedItem = String(progression[randomIndex]);
+  const hiddenProgression = progression.join(' ').replace(replacedItem, '..');
 
   return [hiddenProgression, replacedItem];
 };
